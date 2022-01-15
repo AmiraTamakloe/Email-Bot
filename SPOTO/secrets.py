@@ -1,6 +1,0 @@
-spotify_user_id = 'tctib79y7zvz39xim0jdvxcst'
-spotify_token = 'BQDOHHNnOe1O1OlhaHN1uyu1LNjWoAcdtGV0LqjvcDhO4HCf1L-X22XpeuyCJ9ky1Dls93Q6HFSry3Tasq1Yi7rNBV1pXqVHLrnITe4o-d0rlRn0ZJrcJ-49VNKMeoKsrNSOX5l2LzZnu8MInHL_TLrDYCemGGZlwz7YQ_e0qk7PJAnE9oDJkzzc0_GWch9FKppuuxjzY-0f1W4k3B4T6vdaohWLOyCO'
-refresh_token
-base_64
-client_id ='672c201896b64ca2afe2f1ead2b44f92'
-https//:accounts.spotify.com/authorize?client_id=672c201896b64ca2afe2f1ead2b44f92&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A8080%2F&scope=playlist-modify-public%20playlist-modify-private
