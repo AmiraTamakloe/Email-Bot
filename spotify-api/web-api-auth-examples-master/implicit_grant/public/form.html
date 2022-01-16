@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="circular-std.css">
+		<script src="https://kit.fontawesome.com/335df166b2.js" crossorigin="anonymous"></script>
+		<title>Spotify Bot</title>
+	</head>
+	<script>
+		// When the user clicks on <div>, open the popup
+		function myFunction() {
+			var popup = document.getElementById("myPopup");
+			popup.classList.toggle("show");
+		}
+	</script>
+	<body>
+		<div class = "box">
+			<h1><i>Let's get started.</i></h1>
+			<p>We'll need some of your Spotify information and additional settings.<p><br>
+<!--		<label for="email"><b>Email</b></label>-->
+			<div class="popup" onclick="myFunction()"><i class="fa fa-info-circle"></i>
+				<span class="popuptext" id="myPopup">Don't know? <a href="https://www.businessinsider.com/how-to-find-spotify-username"target="_blank">Here's</a> a guide explaining how to find it.</span>			</div>
+			<input class = "user" type="text" placeholder="your spotify username*" name="user" required>
+<!--		<label for="psw"><b>Password</b></label>-->
+			<input type="text" placeholder="playlist name*" name="plname" required>
+<!--		<label for="psw-repeat"><b>Repeat Password</b></label>-->
+			<input type="text" placeholder="playlist description" name="pldesc">
+			<button type="submit">Create</button> 
+	</body>
+</html>
