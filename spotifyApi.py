@@ -3,7 +3,7 @@ from spotipy.oauth2 import SpotifyOAuth
 import json
 
 
-username='tctib79y7zvz39xim0jdvxcst'
+username='amiratk11'
 
 #auth
 scope='playlist-modify-public'
