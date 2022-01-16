@@ -3,7 +3,8 @@ from spotipy.oauth2 import SpotifyOAuth
 import json
 
 scope='playlist-modify-public'
-username='tctib79y7zvz39xim0jdvxcst'
+
+username=input('Entrer votre user_id: ')
 
 token = SpotifyOAuth(scope=scope,username=username)
 spotifyObject = spotipy.Spotify(auth_manager=token)
@@ -27,3 +28,5 @@ playlist = prePlaylist['items'][0]['id']
 
 
 spotifyObject.user_playlist_add_tracks(user=username,playlist_id=playlist,tracks=list_songs)
+
+#/Users/jacobducas/Documents/GitHub/Reddit-music-Bot/spotifyApi.py
