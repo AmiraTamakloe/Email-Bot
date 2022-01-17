@@ -1,9 +1,10 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import json
+import csv
 
 
-username='amiratk11'
+username='tctib79y7zvz39xim0jdvxcst'
 
 #auth
 scope='playlist-modify-public'
@@ -20,8 +21,27 @@ def create_playlist():
 
     spotifyObject.user_playlist_create(user=username,name=playlist_name,public=True,description=playlist_desc)
 def reddit_songs():
-    pass
+    file = open('/Users/jacobducas/Documents/GitHub/Reddit-music-Bot/BERTO/clean_song.csv')
+    csvreader = csv.reader(file)
+    chansons_listes = []
+    for row in csvreader:
+        if '-' in row[2]:
+            x = row[2].split('-')
+            chansons_listes.append(x[1])
+        else:
+            pass
+    c_list = uri(chansons_listes)
+    return c_list
 
+def uri(liste):
+    l_uri = []
+    for i in liste:
+        result = spotifyObject.search(q=i)
+        if len(result['tracks']['items']) == 0 :
+            pass
+        else:
+            l_uri.append(result['tracks']['items'][0]['uri'])
+    return l_uri
 def add_songs():
     #add specifics songs
     etat = True
@@ -36,7 +56,7 @@ def add_songs():
                 result = spotifyObject.search(q=user_input)
                 #print(json.dumps(result, sort_keys=4, indent=4))
                 list_songs.append(result['tracks']['items'][0]['uri'])
-                user_input = input('Enter the title (TYPE QUIT TO STOP): ')
+                user_input = input('Enter the title (TYPE quit TO STOP): ')
             state = False
 
         elif rep == 'n':
@@ -51,6 +71,8 @@ def add_songs():
         if rep == 'y':
             #à modifier pour accomoder le query
             rs = reddit_songs()
+            list_songs.append(rs)
+            etat = False
             #list_songs.extend(rs)
         elif rep == "n":
             etat = False
